@@ -1,0 +1,23 @@
+services:
+  web:
+    build: .
+    container_name: landing_luis_rivera
+    restart: unless-stopped
+    networks:
+      - red_landing
+    environment:
+      - FLASK_ENV=production
+
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared_tunnel
+    restart: unless-stopped
+    networks:
+      - red_landing
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+    depends_on:
+      - web
+
+networks:
+  red_landing:
+    driver: bridge

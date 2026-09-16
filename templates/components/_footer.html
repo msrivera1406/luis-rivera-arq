@@ -1,0 +1,58 @@
+<footer class="footer">
+  <div class="container footer__container">
+    
+    <div class="footer__brand">
+      <h3 class="footer__logo">LUIS RIVERA</h3>
+      <p class="footer__tagline">Arquitectura cercana, cuidando tu espacio e inversión.</p>
+      <p class="footer__legal-firm">
+        Servicios técnicos y constructivos <strong>LEDRIVAL</strong>.
+      </p>
+    </div>
+
+    <div class="footer__links">
+      <h4 class="footer__heading">Navegación</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Áreas de Trabajo</a></li>
+        <li><a href="#inmuebles">Inmuebles en Venta</a></li>
+        <li><a href="#metodo">Metodología</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__location">
+      <h4 class="footer__heading">Ubicación & Contacto</h4>
+      <p>Quito, Cumbayá, Tumbaco y alrededores.</p>
+      <p>Pichincha — Ecuador</p>
+      <div class="footer__cta-wrap">
+        <a 
+          href="{{ wa_link('Hola Arq. Rivera, le contacto desde su página web.') }}" 
+          class="btn-text btn-text--light" 
+          target="_blank"
+        >
+          Iniciar chat de WhatsApp &rarr;
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p>&copy; {{ 2026 }} Arq. Luis Edmundo Rivera Valencia. Todos los derechos reservados.</p>
+      <p class="footer__signature">Diseño y supervisión con criterio profesional.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Botón Flotante Permanente de WhatsApp -->
+<a 
+  href="{{ wa_link('Hola Arq. Luis Rivera, le escribo desde su página web para hacerle una consulta.') }}" 
+  class="wa-float" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  aria-label="Contactar por WhatsApp"
+>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+  </svg>
+</a>

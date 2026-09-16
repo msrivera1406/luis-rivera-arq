@@ -1,0 +1,43 @@
+<header class="site-header">
+  <div class="container site-header__container">
+    
+    <a href="#inicio" class="site-logo" aria-label="Luis Rivera - Inicio">
+      <!-- Espacio para el isotipo o logotipo -->
+      <div class="site-logo__graphic">
+        <!-- Cuando tengas el logo final, descomenta esta línea y borra el svg: -->
+        <img src="{{ url_for('static', filename='img/logo2.svg') }}" alt="Logo Luis Rivera" class="site-logo__img">
+       
+        <!-- <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 21h18"/>
+          <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/>
+          <path d="M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/>
+        </svg> -->
+      </div>
+
+      <div class="site-logo__text">
+        <span class="site-logo__name">LUIS RIVERA</span>
+        <span class="site-logo__sub">Arquitectura & Construcción</span>
+      </div>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegación principal">
+      <ul class="site-nav__list">
+        <li><a href="#servicios" class="site-nav__link">Servicios</a></li>
+        <li><a href="#inmuebles" class="site-nav__link">Inmuebles</a></li>
+        <li><a href="#metodo" class="site-nav__link">Metodología</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__cta">
+      <a 
+        href="{{ wa_link('Hola Arq. Luis Rivera, le escribo desde su página web.') }}" 
+        class="btn btn--nav" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        <span>Contactar</span>
+      </a>
+    </div>
+
+  </div>
+</header>

@@ -1,0 +1,13 @@
+<svg width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Monograma LR Racionalista">
+  <!-- Muro exterior 'L' en grafito oscuro -->
+  <path d="M10 8V38C10 39.1046 10.8954 40 12 40H38" stroke="#1C201E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Bóveda superior de la 'R' en bloque terracota con remate plano -->
+  <path d="M18 12H28C32.4183 12 36 15.5817 36 20C36 24.4183 32.4183 28 28 28H18V12Z" fill="rgba(155, 94, 67, 0.12)" stroke="#9B5E43" stroke-width="2.2" stroke-linejoin="round"/>
+  
+  <!-- Descarga de fuerza diagonal de la 'R' -->
+  <path d="M26 28L36 38" stroke="#9B5E43" stroke-width="2.6" stroke-linecap="round"/>
+  
+  <!-- Nódulo de anclaje estructural -->
+  <circle cx="10" cy="8" r="2.5" fill="#1C201E"/>
+</svg>

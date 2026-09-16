@@ -1,0 +1,31 @@
+<svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Isotipo Luis Rivera">
+  <!-- Base estructural: La 'L' técnica en grafito -->
+  <path 
+    d="M11 8V38H39" 
+    stroke="#1C201E" 
+    stroke-width="2.5" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+
+  <!-- Remate arquitectónico: El pórtico superior de la 'R' en arcilla cálida -->
+  <path 
+    d="M11 12H27C31.4183 12 35 15.5817 35 20C35 24.4183 31.4183 28 27 28H11" 
+    stroke="#9B5E43" 
+    stroke-width="2.5" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+
+  <!-- Apoyo diagonal: La pierna de la 'R' trazada a 45 grados -->
+  <path 
+    d="M25 28L36 38" 
+    stroke="#9B5E43" 
+    stroke-width="2.5" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+
+  <!-- Detalle técnico: Vínculo constructivo / plomada -->
+  <circle cx="11" cy="8" r="2" fill="#9B5E43" />
+</svg>

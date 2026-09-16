@@ -1,0 +1,92 @@
+<section class="properties section-spacing" id="inmuebles">
+  <div class="container">
+    
+    <div class="properties__header">
+      <div>
+        <span class="eyebrow">Oportunidades Inmobiliarias</span>
+        <h2 class="section-title">Inmuebles seleccionados con criterio técnico</h2>
+        <p class="section-subtitle">
+          Propiedades evaluadas estructuralmente, libres de vicios ocultos y listas para habitar o escriturar en Quito y valles.
+        </p>
+      </div>
+
+      <!-- Controles de navegación de Swiper -->
+      <div class="properties__nav" aria-label="Navegación de propiedades">
+        <button class="slider-btn slider-btn--prev" type="button" aria-label="Inmueble anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="slider-btn slider-btn--next" type="button" aria-label="Siguiente inmueble">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Contenedor principal de Swiper -->
+    <div class="swiper properties-slider">
+      <div class="swiper-wrapper">
+
+        {% for prop in propiedades %}
+        <article class="swiper-slide property-card">
+          <div class="property-card__image-box">
+            <img 
+              src="{{ prop.imagen_principal }}" 
+              alt="{{ prop.titulo }} - {{ prop.sector }}" 
+              loading="lazy"
+            >
+            <span class="property-badge">{{ prop.estado }}</span>
+          </div>
+
+          <div class="property-card__content">
+            <div class="property-card__top">
+              <span class="property-card__location">{{ prop.sector }}</span>
+              <h3 class="property-card__title">{{ prop.titulo }}</h3>
+              <p class="property-card__price">${{ "{:,.0f}".format(prop.precio_usd) }} USD</p>
+            </div>
+
+            <!-- Ficha técnica rápida -->
+            <ul class="property-specs">
+              <li><strong>{{ prop.area_m2 }}</strong> m² útiles</li>
+              <li><strong>{{ prop.caracteristicas.dormitorios }}</strong> habs.</li>
+              <li><strong>{{ prop.caracteristicas.banos }}</strong> baños</li>
+              {% if prop.caracteristicas.estacionamientos %}
+                <li><strong>{{ prop.caracteristicas.estacionamientos }}</strong> parq.</li>
+              {% endif %}
+            </ul>
+
+            <p class="property-card__desc">{{ prop.descripcion_corta }}</p>
+
+            <div class="property-card__audit">
+              <span class="audit-dot"></span>
+              <small>{{ prop.supervision_tecnica }}</small>
+            </div>
+
+            <div class="property-card__footer">
+              <a 
+                href="{{ wa_link(prop.mensaje_whatsapp) }}" 
+                class="btn btn--primary btn--full" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <span>Consultar por WhatsApp</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+
+      </div>
+
+      <!-- Paginación para móviles -->
+      <div class="swiper-pagination properties-pagination"></div>
+    </div>
+
+  </div>
+</section>

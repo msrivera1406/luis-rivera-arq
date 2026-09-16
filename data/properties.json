@@ -1,0 +1,69 @@
+[
+  {
+    "id": "dep-gonzalez-suarez-01",
+    "titulo": "Departamento Vista Panorámica",
+    "sector": "González Suárez, Quito",
+    "estado": "Remodelado a Estrenar",
+    "precio_usd": 165000,
+    "area_m2": 138,
+    "caracteristicas": {
+      "dormitorios": 3,
+      "banos": 2.5,
+      "estacionamientos": 2,
+      "bodega": true
+    },
+    "descripcion_corta": "Remodelación integral de tuberías, sistema eléctrico y acabados con madera noble. Iluminación natural directa.",
+    "imagen_principal": "/static/img/propiedades/gonzalez-suarez-01.jpg",
+    "galeria": [
+      "/static/img/propiedades/gonzalez-suarez-01.jpg",
+      "/static/img/propiedades/gonzalez-suarez-02.jpg",
+      "/static/img/propiedades/gonzalez-suarez-03.jpg"
+    ],
+    "supervision_tecnica": "Revisión estructural y cambio total de instalaciones sanitarias por el Arq. Luis Rivera.",
+    "mensaje_whatsapp": "Hola Arq. Luis Rivera, me interesa recibir más detalles y agendar una visita para el departamento en González Suárez (Ref: 138m²)."
+  },
+  {
+    "id": "dep-cumbaya-02",
+    "titulo": "Suite con Terraza Privada",
+    "sector": "Cumbayá (Sector La Primavera)",
+    "estado": "Entrega Inmediata",
+    "precio_usd": 98000,
+    "area_m2": 72,
+    "caracteristicas": {
+      "dormitorios": 1,
+      "banos": 1.5,
+      "estacionamientos": 1,
+      "bodega": true
+    },
+    "descripcion_corta": "Diseño abierto tipo loft con pérgola metálica y acabados modernos. Clima templado y sector residencial consolidado.",
+    "imagen_principal": "/static/img/propiedades/cumbaya-01.webp",
+    "galeria": [
+      "/static/img/propiedades/cumbaya-01.webp",
+      "/static/img/propiedades/cumbaya-02.jpg"
+    ],
+    "supervision_tecnica": "Propiedad horizontal regularizada y planos actualizados.",
+    "mensaje_whatsapp": "Buenas tardes Arq. Rivera, quisiera consultar disponibilidad para la suite con terraza en Cumbayá."
+  },
+  {
+    "id": "dep-monteserrin-03",
+    "titulo": "Departamento Familiar Duplex",
+    "sector": "Monteserrín, Quito",
+    "estado": "En Venta Directa",
+    "precio_usd": 142000,
+    "area_m2": 160,
+    "caracteristicas": {
+      "dormitorios": 3,
+      "banos": 3,
+      "estacionamientos": 2,
+      "bodega": true
+    },
+    "descripcion_corta": "Doble altura en sala, cocina cerrada con mesones de granito y ampliación de área social recientemente ejecutada.",
+    "imagen_principal": "/static/img/propiedades/monteserrin-01.jpeg",
+    "galeria": [
+      "/static/img/propiedades/monteserrin-01.jpeg",
+      "/static/img/propiedades/monteserrin-02.jpg"
+    ],
+    "supervision_tecnica": "Ampliación ejecutada y supervisada bajo normativa municipal vigente.",
+    "mensaje_whatsapp": "Hola Arq. Rivera, me interesa coordinar una visita al departamento duplex en Monteserrín."
+  }
+]
