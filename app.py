@@ -14,9 +14,15 @@ def cargar_propiedades():
     except FileNotFoundError:
         return []
 
+def cargar_proyectos():
+    try:
+        with open("data/projects.json", "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
+
 @app.context_processor
 def inject_global_vars():
-    """Permite acceder al número de WhatsApp y formateador de URLs desde cualquier template Jinja2"""
     def wa_link(message: str) -> str:
         encoded_msg = urllib.parse.quote(message)
         return f"https://wa.me/{WHATSAPP_PHONE}?text={encoded_msg}"
@@ -26,7 +32,8 @@ def inject_global_vars():
 @app.route("/")
 def index():
     propiedades = cargar_propiedades()
-    return render_template("index.html", propiedades=propiedades)
+    proyectos = cargar_proyectos()
+    return render_template("index.html", propiedades=propiedades, proyectos=proyectos)
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

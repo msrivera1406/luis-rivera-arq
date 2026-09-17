@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initHoverAccordion();
+  initComparisonSliders();
 });
 
 function initHoverAccordion() {
@@ -36,6 +37,28 @@ function initHoverAccordion() {
       e.preventDefault();
       clearTimeout(hoverTimeout);
       setActiveItem(item);
+    });
+  });
+}
+
+function initComparisonSliders() {
+  const sliders = document.querySelectorAll('[data-comparison]');
+
+  sliders.forEach(slider => {
+    const range = slider.querySelector('.comparison-range');
+
+    const updatePosition = (value) => {
+      slider.style.setProperty('--pos', `${value}%`);
+    };
+
+    // Actualiza al arrastrar o tocar
+    range.addEventListener('input', (e) => {
+      updatePosition(e.target.value);
+    });
+
+    // Soporte para mover deslizando directamente con el cursor
+    range.addEventListener('change', (e) => {
+      updatePosition(e.target.value);
     });
   });
 }

@@ -1,0 +1,92 @@
+<section class="projects section-spacing" id="proyectos">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="eyebrow">Resultados Comprobados</span>
+      <h2 class="section-title">El impacto de una intervención técnica bien dirigida</h2>
+      <p class="section-subtitle">
+        Desliza el control en cada imagen para comparar el estado inicial frente al espacio terminado y entregado.
+      </p>
+    </div>
+
+    <div class="projects-list">
+      {% for item in proyectos %}
+      <article class="project-card">
+        
+        <!-- Ficha Técnica Editorial -->
+        <div class="project-card__info">
+          <div class="project-card__meta">
+            <span class="project-badge-tag">{{ item.etiqueta }}</span>
+            <span class="project-year">{{ item.año }}</span>
+          </div>
+
+          <h3 class="project-card__title">{{ item.titulo }}</h3>
+          <p class="project-card__location">{{ item.sector }} • {{ item.area_m2 }} m² intervenidos</p>
+          <p class="project-card__description">{{ item.intervencion }}</p>
+
+          <div class="project-card__cta">
+            <a 
+              href="{{ wa_link('Hola Arq. Luis Rivera, vi el proyecto de ' ~ item.titulo ~ ' y quisiera consultar por una remodelación similar.') }}" 
+              class="btn-text" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Cotizar un proyecto como este &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Comparador Visual Táctil -->
+        <div class="project-card__visual">
+          <div class="comparison-slider" data-comparison style="--pos: 50%;">
+            
+            <!-- Capa Después (Fondo) -->
+            <img 
+              src="{{ item.imagen_despues }}" 
+              alt="{{ item.titulo }} - Después" 
+              class="comparison-img comparison-img--after"
+              loading="lazy"
+            >
+            <span class="comparison-label comparison-label--after">Después</span>
+
+            <!-- Capa Antes (Superpuesta con Clip) -->
+            <div class="comparison-overlay">
+              <img 
+                src="{{ item.imagen_antes }}" 
+                alt="{{ item.titulo }} - Antes" 
+                class="comparison-img comparison-img--before"
+                loading="lazy"
+              >
+              <span class="comparison-label comparison-label--before">Antes</span>
+            </div>
+
+            <!-- Manija y Línea Divisoria -->
+            <div class="comparison-divider" aria-hidden="true">
+              <div class="comparison-handle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Input nativo accesible -->
+            <input 
+              type="range" 
+              min="0" 
+              max="100" 
+              value="50" 
+              class="comparison-range" 
+              aria-label="Deslizar para comparar antes y después"
+            >
+          </div>
+        </div>
+
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

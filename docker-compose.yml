@@ -3,6 +3,11 @@ services:
     build: .
     container_name: landing_luis_rivera
     restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./static:/app/static
+      - ./data:/app/data
     networks:
       - red_landing
     environment:

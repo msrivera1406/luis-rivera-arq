@@ -248,7 +248,6 @@
 
 /* --- PROPIEDADES EN VENTA (SWIPER) --- */
 .properties {
-  background-color: var(--color-bg-subtle);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -757,6 +756,219 @@
 
 .btn--nav:hover {
   background-color: var(--color-accent);
+}
+
+
+
+/* --- COMPARADOR ANTES / DESPUÉS --- */
+.projects {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+/* Invertir alternadamente para efecto zig-zag editorial */
+.project-card:nth-child(even) .project-card__info {
+  order: 2;
+}
+.project-card:nth-child(even) .project-card__visual {
+  order: 1;
+}
+
+.project-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.project-badge-tag {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--color-accent);
+  background-color: var(--color-bg-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.project-year {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.project-card__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.project-card__location {
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: var(--space-md);
+}
+
+.project-card__description {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+/* Contenedor del Slider */
+.comparison-slider {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--color-border);
+  user-select: none;
+}
+
+.comparison-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.comparison-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  clip-path: polygon(0 0, var(--pos, 50%) 0, var(--pos, 50%) 100%, 0 100%);
+}
+
+.comparison-label {
+  position: absolute;
+  bottom: var(--space-md);
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.comparison-label--after {
+  right: var(--space-md);
+  background: rgba(30, 34, 33, 0.75);
+  color: var(--color-text-light);
+  backdrop-filter: blur(4px);
+}
+
+.comparison-label--before {
+  left: var(--space-md);
+  background: rgba(247, 245, 240, 0.85);
+  color: var(--color-text-primary);
+  backdrop-filter: blur(4px);
+}
+
+/* Línea divisoria y manija */
+.comparison-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos, 50%);
+  width: 2px;
+  background-color: var(--color-bg-main);
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.comparison-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+/* Control deslizante nativo invisible superpuesto */
+.comparison-range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 4;
+  margin: 0;
+}
+
+/* 1. Delimitador inferior y ajuste de espaciado en Servicios */
+.services {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-2xl); /* Reduce el espacio muerto inferior */
+}
+
+/* 2. Ajuste de entrada en Proyectos */
+.projects {
+  padding-top: var(--space-2xl); /* Equilibra la distancia respecto a la línea */
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* 3. (Opcional pero muy recomendado) Fondo de superficie para Proyectos:
+   Al darle un fondo blanco puro a la sección de Proyectos, se crea un 
+   contraste editorial sutil contra el fondo arena del resto de la página */
+.projects {
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .project-card:nth-child(even) .project-card__info {
+    order: 0;
+  }
+  .project-card:nth-child(even) .project-card__visual {
+    order: 1;
+  }
+
+  .comparison-slider {
+    height: 300px;
+  }
 }
 
 
