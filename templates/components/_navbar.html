@@ -20,6 +20,12 @@
       </div>
     </a>
 
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+
     <nav class="site-nav" aria-label="Navegación principal">
       <ul class="site-nav__list">
         <li><a href="#servicios" class="site-nav__link">Servicios</a></li>
@@ -27,18 +33,13 @@
         <li><a href="#inmuebles" class="site-nav__link">Inmuebles</a></li>
         <li><a href="#metodo" class="site-nav__link">Metodología</a></li>
       </ul>
+      <div class="site-nav__mobile-cta">
+        <a href="#contacto" class="btn btn--nav btn--full">Contactar</a>
+      </div>
     </nav>
 
-    <div class="site-header__cta">
-      <a 
-        href="{{ wa_link('Hola Arq. Luis Rivera, le escribo desde su página web.') }}" 
-        class="btn btn--nav" 
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        <span>Contactar</span>
-      </a>
-    </div>
+    <!-- CTA de Escritorio -->
+    <a href="#contacto" class="btn btn--nav nav-desktop-cta">Contactar</a>
 
   </div>
 </header>

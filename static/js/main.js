@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  initMobileNav();
   initHoverAccordion();
   initComparisonSliders();
 });
@@ -59,6 +60,34 @@ function initComparisonSliders() {
     // Soporte para mover deslizando directamente con el cursor
     range.addEventListener('change', (e) => {
       updatePosition(e.target.value);
+    });
+  });
+}
+
+function initMobileNav() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  const navLinks = document.querySelectorAll('.site-nav__link, .site-nav__mobile-cta a');
+
+  if (!navToggle || !siteNav) return;
+
+  const toggleNav = () => {
+    const isOpen = siteNav.classList.toggle('is-open');
+    navToggle.classList.toggle('is-active', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+    
+    // Evitar scroll del fondo cuando el menú está abierto
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  };
+
+  navToggle.addEventListener('click', toggleNav);
+
+  // Cerrar el menú automáticamente al hacer clic en cualquier sección
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (siteNav.classList.contains('is-open')) {
+        toggleNav();
+      }
     });
   });
 }
